@@ -1,0 +1,189 @@
+\hypertarget{q1_8c}{}\doxysection{/home/anon/\+Documents/\+L1/\+Q1/q1.c File Reference}
+\label{q1_8c}\index{/home/anon/Documents/L1/Q1/q1.c@{/home/anon/Documents/L1/Q1/q1.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structstudent}{student}}
+\item 
+struct \mbox{\hyperlink{structlist}{list}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structstudent}{student}} \mbox{\hyperlink{q1_8c_a0aae7ef125b291c43dad230e70110d97}{student}}
+\item 
+typedef struct \mbox{\hyperlink{structlist}{list}} \mbox{\hyperlink{q1_8c_aa295f649a192b2bcdc06effc2f71dde4}{list}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{q1_8c_a8f72dea00934209956b1095541ac6710}{insert}} (\mbox{\hyperlink{structstudent}{student}} s)
+\item 
+void \mbox{\hyperlink{q1_8c_a88552a1c7791628f3875b3dc793a5cd8}{del}} (int num)
+\item 
+void \mbox{\hyperlink{q1_8c_a8097b4ce1139ce2ee095ddedf0a02cf7}{print}} (\mbox{\hyperlink{structstudent}{student}} data)
+\item 
+void \mbox{\hyperlink{q1_8c_a27594cd80ed8c72da6c88d690e6619ed}{modify}} (int num)
+\item 
+void \mbox{\hyperlink{q1_8c_a47fdc9eea42b6975cdc835bb2e08810e}{sort}} ()
+\item 
+void \mbox{\hyperlink{q1_8c_ae50f452d120813c73f04af8e04f72fd3}{read}} (F\+I\+LE $\ast$f, \mbox{\hyperlink{structstudent}{student}} records\mbox{[}$\,$\mbox{]})
+\item 
+void \mbox{\hyperlink{q1_8c_a2f736094bbaa598f70c3e241bad4a1cc}{print\+List}} ()
+\item 
+int \mbox{\hyperlink{q1_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structlist}{list}} $\ast$ \mbox{\hyperlink{q1_8c_ad46084e4dc385a963d595cf5d3e99f4f}{head}} =N\+U\+LL
+\item 
+int \mbox{\hyperlink{q1_8c_a439227feff9d7f55384e8780cfc2eb82}{size}} =0
+\begin{DoxyCompactList}\small\item\em Current size of the list. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{q1_8c_a5ba01ad840f1deccc078ef80c405d75d}{current\+Roll}} =101
+\begin{DoxyCompactList}\small\item\em Stores the value of the roll number to be alloted to the new student. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{q1_8c_af93f4f37fc2ad9c37af4a715423b110c}{top}} =0
+\begin{DoxyCompactList}\small\item\em Defines the size of the unused roll number queue. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{q1_8c_ae606a338dae7ac20a22875d9bad13c19}{queue}} \mbox{[}13\mbox{]} =\{0\}
+\begin{DoxyCompactList}\small\item\em Queue to store deleted roll numbers to be used for new students being enlisted. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{q1_8c_aa295f649a192b2bcdc06effc2f71dde4}\label{q1_8c_aa295f649a192b2bcdc06effc2f71dde4}} 
+\index{q1.c@{q1.c}!list@{list}}
+\index{list@{list}!q1.c@{q1.c}}
+\doxysubsubsection{\texorpdfstring{list}{list}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structlist}{list}} \mbox{\hyperlink{structlist}{list}}}
+
+This strucure defines a double linked list node containing student type data \mbox{\Hypertarget{q1_8c_a0aae7ef125b291c43dad230e70110d97}\label{q1_8c_a0aae7ef125b291c43dad230e70110d97}} 
+\index{q1.c@{q1.c}!student@{student}}
+\index{student@{student}!q1.c@{q1.c}}
+\doxysubsubsection{\texorpdfstring{student}{student}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structstudent}{student}} \mbox{\hyperlink{structstudent}{student}}}
+
+This structure defines the data of each student 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{q1_8c_a88552a1c7791628f3875b3dc793a5cd8}\label{q1_8c_a88552a1c7791628f3875b3dc793a5cd8}} 
+\index{q1.c@{q1.c}!del@{del}}
+\index{del@{del}!q1.c@{q1.c}}
+\doxysubsubsection{\texorpdfstring{del()}{del()}}
+{\footnotesize\ttfamily void del (\begin{DoxyParamCaption}\item[{int}]{num }\end{DoxyParamCaption})}
+
+This function is to delete any node whose roll number that matches the roll number being passed into the function. 
+\begin{DoxyParams}{Parameters}
+{\em num} & The roll number of the node to be deleted. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{q1_8c_a8f72dea00934209956b1095541ac6710}\label{q1_8c_a8f72dea00934209956b1095541ac6710}} 
+\index{q1.c@{q1.c}!insert@{insert}}
+\index{insert@{insert}!q1.c@{q1.c}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily void insert (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstudent}{student}}}]{s }\end{DoxyParamCaption})}
+
+This function is to insert a new node into the list, either at the beginning, middle or the end. 
+\begin{DoxyParams}{Parameters}
+{\em s} & contains the data of the student to be added into the list \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{q1_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{q1_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{q1.c@{q1.c}!main@{main}}
+\index{main@{main}!q1.c@{q1.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{q1_8c_a27594cd80ed8c72da6c88d690e6619ed}\label{q1_8c_a27594cd80ed8c72da6c88d690e6619ed}} 
+\index{q1.c@{q1.c}!modify@{modify}}
+\index{modify@{modify}!q1.c@{q1.c}}
+\doxysubsubsection{\texorpdfstring{modify()}{modify()}}
+{\footnotesize\ttfamily void modify (\begin{DoxyParamCaption}\item[{int}]{num }\end{DoxyParamCaption})}
+
+Modifies either name, dob, address, phone number of the node that matches the roll number passed into the function. @ param num The roll number of the student to be modified \mbox{\Hypertarget{q1_8c_a8097b4ce1139ce2ee095ddedf0a02cf7}\label{q1_8c_a8097b4ce1139ce2ee095ddedf0a02cf7}} 
+\index{q1.c@{q1.c}!print@{print}}
+\index{print@{print}!q1.c@{q1.c}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void print (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstudent}{student}}}]{data }\end{DoxyParamCaption})}
+
+Print the data of the student 
+\begin{DoxyParams}{Parameters}
+{\em data} & The data of the student to be displayed \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{q1_8c_a2f736094bbaa598f70c3e241bad4a1cc}\label{q1_8c_a2f736094bbaa598f70c3e241bad4a1cc}} 
+\index{q1.c@{q1.c}!printList@{printList}}
+\index{printList@{printList}!q1.c@{q1.c}}
+\doxysubsubsection{\texorpdfstring{printList()}{printList()}}
+{\footnotesize\ttfamily void print\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Prints the entire list of data nodes. \mbox{\Hypertarget{q1_8c_ae50f452d120813c73f04af8e04f72fd3}\label{q1_8c_ae50f452d120813c73f04af8e04f72fd3}} 
+\index{q1.c@{q1.c}!read@{read}}
+\index{read@{read}!q1.c@{q1.c}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily void read (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{f,  }\item[{\mbox{\hyperlink{structstudent}{student}}}]{records\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+Reads the data of all the students in the file and stores them in array of student data type which is later used to insert in the list. 
+\begin{DoxyParams}{Parameters}
+{\em f} & The file which contains the data \\
+\hline
+{\em records} & The array of records that contains data of each student \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{q1_8c_a47fdc9eea42b6975cdc835bb2e08810e}\label{q1_8c_a47fdc9eea42b6975cdc835bb2e08810e}} 
+\index{q1.c@{q1.c}!sort@{sort}}
+\index{sort@{sort}!q1.c@{q1.c}}
+\doxysubsubsection{\texorpdfstring{sort()}{sort()}}
+{\footnotesize\ttfamily void sort (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Sorts the list based on alphabetical order of name 
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{q1_8c_a5ba01ad840f1deccc078ef80c405d75d}\label{q1_8c_a5ba01ad840f1deccc078ef80c405d75d}} 
+\index{q1.c@{q1.c}!currentRoll@{currentRoll}}
+\index{currentRoll@{currentRoll}!q1.c@{q1.c}}
+\doxysubsubsection{\texorpdfstring{currentRoll}{currentRoll}}
+{\footnotesize\ttfamily int current\+Roll =101}
+
+
+
+Stores the value of the roll number to be alloted to the new student. 
+
+\mbox{\Hypertarget{q1_8c_ad46084e4dc385a963d595cf5d3e99f4f}\label{q1_8c_ad46084e4dc385a963d595cf5d3e99f4f}} 
+\index{q1.c@{q1.c}!head@{head}}
+\index{head@{head}!q1.c@{q1.c}}
+\doxysubsubsection{\texorpdfstring{head}{head}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structlist}{list}}$\ast$ head =N\+U\+LL}
+
+\mbox{\Hypertarget{q1_8c_ae606a338dae7ac20a22875d9bad13c19}\label{q1_8c_ae606a338dae7ac20a22875d9bad13c19}} 
+\index{q1.c@{q1.c}!queue@{queue}}
+\index{queue@{queue}!q1.c@{q1.c}}
+\doxysubsubsection{\texorpdfstring{queue}{queue}}
+{\footnotesize\ttfamily int queue\mbox{[}13\mbox{]} =\{0\}}
+
+
+
+Queue to store deleted roll numbers to be used for new students being enlisted. 
+
+\mbox{\Hypertarget{q1_8c_a439227feff9d7f55384e8780cfc2eb82}\label{q1_8c_a439227feff9d7f55384e8780cfc2eb82}} 
+\index{q1.c@{q1.c}!size@{size}}
+\index{size@{size}!q1.c@{q1.c}}
+\doxysubsubsection{\texorpdfstring{size}{size}}
+{\footnotesize\ttfamily int size =0}
+
+
+
+Current size of the list. 
+
+\mbox{\Hypertarget{q1_8c_af93f4f37fc2ad9c37af4a715423b110c}\label{q1_8c_af93f4f37fc2ad9c37af4a715423b110c}} 
+\index{q1.c@{q1.c}!top@{top}}
+\index{top@{top}!q1.c@{q1.c}}
+\doxysubsubsection{\texorpdfstring{top}{top}}
+{\footnotesize\ttfamily int top =0}
+
+
+
+Defines the size of the unused roll number queue. 
+

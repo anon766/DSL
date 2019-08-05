@@ -1,0 +1,177 @@
+\hypertarget{q3_8c}{}\doxysection{/home/anon/\+Documents/\+L1/\+Q3/q3.c File Reference}
+\label{q3_8c}\index{/home/anon/Documents/L1/Q3/q3.c@{/home/anon/Documents/L1/Q3/q3.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{q3_8c_af5b3493436bd2c5c2537c6e2aeff186f}{cols}}~1268
+\item 
+\#define \mbox{\hyperlink{q3_8c_a709f915a8f591c9ec3208128ee246b89}{rows}}~953
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{q3_8c_a1c02de0e13a8fc76f334147605ce07b8}{read}} (F\+I\+LE $\ast$f, int $\ast$num\mbox{[}\mbox{\hyperlink{q3_8c_af5b3493436bd2c5c2537c6e2aeff186f}{cols}}\mbox{]})
+\item 
+void \mbox{\hyperlink{q3_8c_a10095551d628d05a43a27758f7cf7ab5}{write}} (F\+I\+LE $\ast$f, int $\ast$num\mbox{[}\mbox{\hyperlink{q3_8c_af5b3493436bd2c5c2537c6e2aeff186f}{cols}}\mbox{]})
+\item 
+void \mbox{\hyperlink{q3_8c_a66e93f3d6145d7f66fbad8faba1f6cec}{pixel\+Value}} (int x, int y)
+\item 
+void \mbox{\hyperlink{q3_8c_a758228d08ee711b02161aa9384caa797}{red\+Remove}} ()
+\item 
+void \mbox{\hyperlink{q3_8c_aee9fa0e482e2e12f2d97033e6fbf84c7}{green\+Remove}} ()
+\item 
+void \mbox{\hyperlink{q3_8c_a9cb766d2b244464413229287eb8cdd15}{blue\+Remove}} ()
+\item 
+void \mbox{\hyperlink{q3_8c_af9393dcdbcdf45db26c0379ab29cdfa9}{red\+Only}} ()
+\item 
+void \mbox{\hyperlink{q3_8c_ad1543fdc021f2c0b48bf978ca970b4c4}{green\+Only}} ()
+\item 
+void \mbox{\hyperlink{q3_8c_ab41f190053202d0dace818e7bf2b3baa}{blue\+Only}} ()
+\item 
+int \mbox{\hyperlink{q3_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int $\ast$$\ast$ \mbox{\hyperlink{q3_8c_afbc02cfe334c856f935a9b88e06ff10c}{r}}
+\begin{DoxyCompactList}\small\item\em Stores the value of red in the pixel. \end{DoxyCompactList}\item 
+int $\ast$$\ast$ \mbox{\hyperlink{q3_8c_ae64f53180b5d41e1fbe03fef85cf0b04}{b}}
+\begin{DoxyCompactList}\small\item\em Stores the value of blue in the pixel. \end{DoxyCompactList}\item 
+int $\ast$$\ast$ \mbox{\hyperlink{q3_8c_ab7058cc6e0cec6bdca362a11969375d0}{g}}
+\begin{DoxyCompactList}\small\item\em Stores the value of green in the pixel. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{q3_8c_af5b3493436bd2c5c2537c6e2aeff186f}\label{q3_8c_af5b3493436bd2c5c2537c6e2aeff186f}} 
+\index{q3.c@{q3.c}!cols@{cols}}
+\index{cols@{cols}!q3.c@{q3.c}}
+\doxysubsubsection{\texorpdfstring{cols}{cols}}
+{\footnotesize\ttfamily \#define cols~1268}
+
+\mbox{\Hypertarget{q3_8c_a709f915a8f591c9ec3208128ee246b89}\label{q3_8c_a709f915a8f591c9ec3208128ee246b89}} 
+\index{q3.c@{q3.c}!rows@{rows}}
+\index{rows@{rows}!q3.c@{q3.c}}
+\doxysubsubsection{\texorpdfstring{rows}{rows}}
+{\footnotesize\ttfamily \#define rows~953}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{q3_8c_ab41f190053202d0dace818e7bf2b3baa}\label{q3_8c_ab41f190053202d0dace818e7bf2b3baa}} 
+\index{q3.c@{q3.c}!blueOnly@{blueOnly}}
+\index{blueOnly@{blueOnly}!q3.c@{q3.c}}
+\doxysubsubsection{\texorpdfstring{blueOnly()}{blueOnly()}}
+{\footnotesize\ttfamily void blue\+Only (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Keeps only blue shades and removes red and green shades \mbox{\Hypertarget{q3_8c_a9cb766d2b244464413229287eb8cdd15}\label{q3_8c_a9cb766d2b244464413229287eb8cdd15}} 
+\index{q3.c@{q3.c}!blueRemove@{blueRemove}}
+\index{blueRemove@{blueRemove}!q3.c@{q3.c}}
+\doxysubsubsection{\texorpdfstring{blueRemove()}{blueRemove()}}
+{\footnotesize\ttfamily void blue\+Remove (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Removes all blue shades \mbox{\Hypertarget{q3_8c_ad1543fdc021f2c0b48bf978ca970b4c4}\label{q3_8c_ad1543fdc021f2c0b48bf978ca970b4c4}} 
+\index{q3.c@{q3.c}!greenOnly@{greenOnly}}
+\index{greenOnly@{greenOnly}!q3.c@{q3.c}}
+\doxysubsubsection{\texorpdfstring{greenOnly()}{greenOnly()}}
+{\footnotesize\ttfamily void green\+Only (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Keeps only green shades and removes red and blue shades \mbox{\Hypertarget{q3_8c_aee9fa0e482e2e12f2d97033e6fbf84c7}\label{q3_8c_aee9fa0e482e2e12f2d97033e6fbf84c7}} 
+\index{q3.c@{q3.c}!greenRemove@{greenRemove}}
+\index{greenRemove@{greenRemove}!q3.c@{q3.c}}
+\doxysubsubsection{\texorpdfstring{greenRemove()}{greenRemove()}}
+{\footnotesize\ttfamily void green\+Remove (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Removes all green shades \mbox{\Hypertarget{q3_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{q3_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{q3.c@{q3.c}!main@{main}}
+\index{main@{main}!q3.c@{q3.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{q3_8c_a66e93f3d6145d7f66fbad8faba1f6cec}\label{q3_8c_a66e93f3d6145d7f66fbad8faba1f6cec}} 
+\index{q3.c@{q3.c}!pixelValue@{pixelValue}}
+\index{pixelValue@{pixelValue}!q3.c@{q3.c}}
+\doxysubsubsection{\texorpdfstring{pixelValue()}{pixelValue()}}
+{\footnotesize\ttfamily void pixel\+Value (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+Displayes the rgb shade at (x,y) coordinate 
+\begin{DoxyParams}{Parameters}
+{\em x} & x-\/coordinate \\
+\hline
+{\em y} & y-\/coordinate \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{q3_8c_a1c02de0e13a8fc76f334147605ce07b8}\label{q3_8c_a1c02de0e13a8fc76f334147605ce07b8}} 
+\index{q3.c@{q3.c}!read@{read}}
+\index{read@{read}!q3.c@{q3.c}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily void read (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{f,  }\item[{int $\ast$}]{num\mbox{[}cols\mbox{]} }\end{DoxyParamCaption})}
+
+Reads the file containing pixel values 
+\begin{DoxyParams}{Parameters}
+{\em f} & File pointer \\
+\hline
+{\em num} & 2D array that contains value of that shade \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{q3_8c_af9393dcdbcdf45db26c0379ab29cdfa9}\label{q3_8c_af9393dcdbcdf45db26c0379ab29cdfa9}} 
+\index{q3.c@{q3.c}!redOnly@{redOnly}}
+\index{redOnly@{redOnly}!q3.c@{q3.c}}
+\doxysubsubsection{\texorpdfstring{redOnly()}{redOnly()}}
+{\footnotesize\ttfamily void red\+Only (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Keeps only red shades and removes blue and green shades \mbox{\Hypertarget{q3_8c_a758228d08ee711b02161aa9384caa797}\label{q3_8c_a758228d08ee711b02161aa9384caa797}} 
+\index{q3.c@{q3.c}!redRemove@{redRemove}}
+\index{redRemove@{redRemove}!q3.c@{q3.c}}
+\doxysubsubsection{\texorpdfstring{redRemove()}{redRemove()}}
+{\footnotesize\ttfamily void red\+Remove (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Removes all red shades \mbox{\Hypertarget{q3_8c_a10095551d628d05a43a27758f7cf7ab5}\label{q3_8c_a10095551d628d05a43a27758f7cf7ab5}} 
+\index{q3.c@{q3.c}!write@{write}}
+\index{write@{write}!q3.c@{q3.c}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily void write (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{f,  }\item[{int $\ast$}]{num\mbox{[}cols\mbox{]} }\end{DoxyParamCaption})}
+
+Writes into the file to store the final rgb shades after removing green 
+\begin{DoxyParams}{Parameters}
+{\em f} & File pointer to the output file \\
+\hline
+{\em num} & 2D array that contains the final value of the shades after removal of green \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{q3_8c_ae64f53180b5d41e1fbe03fef85cf0b04}\label{q3_8c_ae64f53180b5d41e1fbe03fef85cf0b04}} 
+\index{q3.c@{q3.c}!b@{b}}
+\index{b@{b}!q3.c@{q3.c}}
+\doxysubsubsection{\texorpdfstring{b}{b}}
+{\footnotesize\ttfamily int$\ast$$\ast$ b}
+
+
+
+Stores the value of blue in the pixel. 
+
+\mbox{\Hypertarget{q3_8c_ab7058cc6e0cec6bdca362a11969375d0}\label{q3_8c_ab7058cc6e0cec6bdca362a11969375d0}} 
+\index{q3.c@{q3.c}!g@{g}}
+\index{g@{g}!q3.c@{q3.c}}
+\doxysubsubsection{\texorpdfstring{g}{g}}
+{\footnotesize\ttfamily int$\ast$$\ast$ g}
+
+
+
+Stores the value of green in the pixel. 
+
+\mbox{\Hypertarget{q3_8c_afbc02cfe334c856f935a9b88e06ff10c}\label{q3_8c_afbc02cfe334c856f935a9b88e06ff10c}} 
+\index{q3.c@{q3.c}!r@{r}}
+\index{r@{r}!q3.c@{q3.c}}
+\doxysubsubsection{\texorpdfstring{r}{r}}
+{\footnotesize\ttfamily int$\ast$$\ast$ r}
+
+
+
+Stores the value of red in the pixel. 
+
