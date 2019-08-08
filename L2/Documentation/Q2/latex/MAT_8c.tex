@@ -1,0 +1,226 @@
+\hypertarget{MAT_8c}{}\doxysection{/home/anon/\+Documents/\+L2/\+Q2/\+M\+AT.c File Reference}
+\label{MAT_8c}\index{/home/anon/Documents/L2/Q2/MAT.c@{/home/anon/Documents/L2/Q2/MAT.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structnode}{node}}
+\item 
+struct \mbox{\hyperlink{structquadtree}{quadtree}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structnode}{node}} \mbox{\hyperlink{MAT_8c_af4aeda155dbe167f1c1cf38cb65bf324}{node}}
+\item 
+typedef struct \mbox{\hyperlink{structquadtree}{quadtree}} \mbox{\hyperlink{MAT_8c_ad311789752380000518858ed927d2e8f}{quadtree}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{MAT_8c_a1699d3ae3f7fb9a3c4cd316fa7b0108a}{dimension}} (F\+I\+LE $\ast$f)
+\item 
+void \mbox{\hyperlink{MAT_8c_ac210ba574286ec87585582ba0b05bb00}{read}} (F\+I\+LE $\ast$f, int size, int \mbox{\hyperlink{MAT_8c_a1699d3ae3f7fb9a3c4cd316fa7b0108a}{dimension}})
+\item 
+void \mbox{\hyperlink{MAT_8c_a8864f51e83226622dfd850a207f7233d}{create\+Maximal\+Arr}} (int x\+Start, int x\+End, int y\+Start, int y\+End)
+\item 
+\mbox{\hyperlink{structquadtree}{quadtree}} $\ast$ \mbox{\hyperlink{MAT_8c_acf4c45f750aa43e3a6749beac7c9cf01}{insert}} ()
+\item 
+int \mbox{\hyperlink{MAT_8c_ac1d0a10953be80adbb0a0dc160ace6d3}{check\+Level}} (\mbox{\hyperlink{structquadtree}{quadtree}} $\ast$temp, \mbox{\hyperlink{structquadtree}{quadtree}} $\ast$q, int level)
+\item 
+void \mbox{\hyperlink{MAT_8c_aa6bb3b8d17294b7a618c7c82109c7d1c}{create\+Quadtree}} (int x\+Start, int x\+End, int y\+Start, int y\+End, \mbox{\hyperlink{structquadtree}{quadtree}} $\ast$temp)
+\item 
+void \mbox{\hyperlink{MAT_8c_a2217f2b7482a76bc5610e38d76b8464e}{print\+Tree}} (\mbox{\hyperlink{structquadtree}{quadtree}} $\ast$temp)
+\item 
+void \mbox{\hyperlink{MAT_8c_a621daf1cdbe344f5d0f8676d7556d510}{print}} (int $\ast$arr\mbox{[}$\,$\mbox{]}, int size)
+\item 
+int \mbox{\hyperlink{MAT_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int $\ast$$\ast$ \mbox{\hyperlink{MAT_8c_a64cc5aa56d803cc14fba48761e04002e}{image\+Bin}}
+\begin{DoxyCompactList}\small\item\em Contains the original input of image array, where 0 means outside the image and 1 is part of the image. \end{DoxyCompactList}\item 
+int $\ast$$\ast$ \mbox{\hyperlink{MAT_8c_aaa4e7066bd85e2741d05a8c6d1583e0c}{max\+Arr}}
+\begin{DoxyCompactList}\small\item\em Stores the corresponding block number to a part outside or inside the image. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{MAT_8c_a617a47c70795bcff659815ad0efd2266}{counter}} =1
+\begin{DoxyCompactList}\small\item\em Keeps a count of how many blocks have been allotted currently. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structquadtree}{quadtree}} $\ast$ \mbox{\hyperlink{MAT_8c_a1f65e4f24fa97823a609dfd553d8d626}{root}}
+\begin{DoxyCompactList}\small\item\em Declares the quadtree. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{MAT_8c_af4aeda155dbe167f1c1cf38cb65bf324}\label{MAT_8c_af4aeda155dbe167f1c1cf38cb65bf324}} 
+\index{MAT.c@{MAT.c}!node@{node}}
+\index{node@{node}!MAT.c@{MAT.c}}
+\doxysubsubsection{\texorpdfstring{node}{node}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structnode}{node}} \mbox{\hyperlink{structnode}{node}}}
+
+Defines the data of each node in the quadtree \mbox{\Hypertarget{MAT_8c_ad311789752380000518858ed927d2e8f}\label{MAT_8c_ad311789752380000518858ed927d2e8f}} 
+\index{MAT.c@{MAT.c}!quadtree@{quadtree}}
+\index{quadtree@{quadtree}!MAT.c@{MAT.c}}
+\doxysubsubsection{\texorpdfstring{quadtree}{quadtree}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structquadtree}{quadtree}} \mbox{\hyperlink{structquadtree}{quadtree}}}
+
+Defines the quadtree containing the nodes 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{MAT_8c_ac1d0a10953be80adbb0a0dc160ace6d3}\label{MAT_8c_ac1d0a10953be80adbb0a0dc160ace6d3}} 
+\index{MAT.c@{MAT.c}!checkLevel@{checkLevel}}
+\index{checkLevel@{checkLevel}!MAT.c@{MAT.c}}
+\doxysubsubsection{\texorpdfstring{checkLevel()}{checkLevel()}}
+{\footnotesize\ttfamily int check\+Level (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structquadtree}{quadtree}} $\ast$}]{temp,  }\item[{\mbox{\hyperlink{structquadtree}{quadtree}} $\ast$}]{q,  }\item[{int}]{level }\end{DoxyParamCaption})}
+
+Finds the current depth of the inserted node from root, where level of root is 0. 
+\begin{DoxyParams}{Parameters}
+{\em temp} & Stores the current position of the node from where subsequent search occurs \\
+\hline
+{\em q} & Stores the node whose level is to be found \\
+\hline
+{\em level} & Stores the level of the node, and receives an intial value of 0 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{MAT_8c_a8864f51e83226622dfd850a207f7233d}\label{MAT_8c_a8864f51e83226622dfd850a207f7233d}} 
+\index{MAT.c@{MAT.c}!createMaximalArr@{createMaximalArr}}
+\index{createMaximalArr@{createMaximalArr}!MAT.c@{MAT.c}}
+\doxysubsubsection{\texorpdfstring{createMaximalArr()}{createMaximalArr()}}
+{\footnotesize\ttfamily void create\+Maximal\+Arr (\begin{DoxyParamCaption}\item[{int}]{x\+Start,  }\item[{int}]{x\+End,  }\item[{int}]{y\+Start,  }\item[{int}]{y\+End }\end{DoxyParamCaption})}
+
+Creates the max\+Arr that stores corresponding block number of the image array. 
+\begin{DoxyParams}{Parameters}
+{\em x\+Start} & Stores the starting row index of the quadrant \\
+\hline
+{\em x\+End} & Stores the ending row index of the quadrant \\
+\hline
+{\em y\+Start} & Stores the starting column index of the quadrant \\
+\hline
+{\em y\+End} & Stores the ending column index of the quadrant \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{MAT_8c_aa6bb3b8d17294b7a618c7c82109c7d1c}\label{MAT_8c_aa6bb3b8d17294b7a618c7c82109c7d1c}} 
+\index{MAT.c@{MAT.c}!createQuadtree@{createQuadtree}}
+\index{createQuadtree@{createQuadtree}!MAT.c@{MAT.c}}
+\doxysubsubsection{\texorpdfstring{createQuadtree()}{createQuadtree()}}
+{\footnotesize\ttfamily void create\+Quadtree (\begin{DoxyParamCaption}\item[{int}]{x\+Start,  }\item[{int}]{x\+End,  }\item[{int}]{y\+Start,  }\item[{int}]{y\+End,  }\item[{\mbox{\hyperlink{structquadtree}{quadtree}} $\ast$}]{temp }\end{DoxyParamCaption})}
+
+Creates the quadtree of the image array. 
+\begin{DoxyParams}{Parameters}
+{\em x\+Start} & Stores the starting row index of the quadrant \\
+\hline
+{\em x\+End} & Stores the ending row index of the quadrant \\
+\hline
+{\em y\+Start} & Stores the starting column index of the quadrant \\
+\hline
+{\em y\+End} & Stores the ending column index of the quadrant \\
+\hline
+{\em temp} & Stores the current node from where branching may occur or block number be allotted \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{MAT_8c_a1699d3ae3f7fb9a3c4cd316fa7b0108a}\label{MAT_8c_a1699d3ae3f7fb9a3c4cd316fa7b0108a}} 
+\index{MAT.c@{MAT.c}!dimension@{dimension}}
+\index{dimension@{dimension}!MAT.c@{MAT.c}}
+\doxysubsubsection{\texorpdfstring{dimension()}{dimension()}}
+{\footnotesize\ttfamily int dimension (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{f }\end{DoxyParamCaption})}
+
+Fetches the dimension of the matrix of image array in order to dynamically allocate for storage. 
+\begin{DoxyParams}{Parameters}
+{\em f} & File pointer \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{MAT_8c_acf4c45f750aa43e3a6749beac7c9cf01}\label{MAT_8c_acf4c45f750aa43e3a6749beac7c9cf01}} 
+\index{MAT.c@{MAT.c}!insert@{insert}}
+\index{insert@{insert}!MAT.c@{MAT.c}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structquadtree}{quadtree}}$\ast$ insert (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Inserts a new node to the quadtree and returns the new node \mbox{\Hypertarget{MAT_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{MAT_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{MAT.c@{MAT.c}!main@{main}}
+\index{main@{main}!MAT.c@{MAT.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{MAT_8c_a621daf1cdbe344f5d0f8676d7556d510}\label{MAT_8c_a621daf1cdbe344f5d0f8676d7556d510}} 
+\index{MAT.c@{MAT.c}!print@{print}}
+\index{print@{print}!MAT.c@{MAT.c}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void print (\begin{DoxyParamCaption}\item[{int $\ast$}]{arr\mbox{[}$\,$\mbox{]},  }\item[{int}]{size }\end{DoxyParamCaption})}
+
+Prints the 2D array. 
+\begin{DoxyParams}{Parameters}
+{\em arr} & Stores the array to be printed \\
+\hline
+{\em size} & Stores the dimension of the square matrix \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{MAT_8c_a2217f2b7482a76bc5610e38d76b8464e}\label{MAT_8c_a2217f2b7482a76bc5610e38d76b8464e}} 
+\index{MAT.c@{MAT.c}!printTree@{printTree}}
+\index{printTree@{printTree}!MAT.c@{MAT.c}}
+\doxysubsubsection{\texorpdfstring{printTree()}{printTree()}}
+{\footnotesize\ttfamily void print\+Tree (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structquadtree}{quadtree}} $\ast$}]{temp }\end{DoxyParamCaption})}
+
+Prints the tree using post order traversal. 
+\begin{DoxyParams}{Parameters}
+{\em temp} & Stores the current node from where further traversal will take place \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{MAT_8c_ac210ba574286ec87585582ba0b05bb00}\label{MAT_8c_ac210ba574286ec87585582ba0b05bb00}} 
+\index{MAT.c@{MAT.c}!read@{read}}
+\index{read@{read}!MAT.c@{MAT.c}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily void read (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{f,  }\item[{int}]{size,  }\item[{int}]{dimension }\end{DoxyParamCaption})}
+
+Reads the image array in binary format and stores in the dynamically allocated 2D array. 
+\begin{DoxyParams}{Parameters}
+{\em f} & File pointer \\
+\hline
+{\em size} & Stores the least order of 2 dimension that is greater than the image array dimension in order to split evenly at every split \\
+\hline
+{\em dimension} & Stores the dimension of the image array \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{MAT_8c_a617a47c70795bcff659815ad0efd2266}\label{MAT_8c_a617a47c70795bcff659815ad0efd2266}} 
+\index{MAT.c@{MAT.c}!counter@{counter}}
+\index{counter@{counter}!MAT.c@{MAT.c}}
+\doxysubsubsection{\texorpdfstring{counter}{counter}}
+{\footnotesize\ttfamily int counter =1}
+
+
+
+Keeps a count of how many blocks have been allotted currently. 
+
+\mbox{\Hypertarget{MAT_8c_a64cc5aa56d803cc14fba48761e04002e}\label{MAT_8c_a64cc5aa56d803cc14fba48761e04002e}} 
+\index{MAT.c@{MAT.c}!imageBin@{imageBin}}
+\index{imageBin@{imageBin}!MAT.c@{MAT.c}}
+\doxysubsubsection{\texorpdfstring{imageBin}{imageBin}}
+{\footnotesize\ttfamily int$\ast$$\ast$ image\+Bin}
+
+
+
+Contains the original input of image array, where 0 means outside the image and 1 is part of the image. 
+
+\mbox{\Hypertarget{MAT_8c_aaa4e7066bd85e2741d05a8c6d1583e0c}\label{MAT_8c_aaa4e7066bd85e2741d05a8c6d1583e0c}} 
+\index{MAT.c@{MAT.c}!maxArr@{maxArr}}
+\index{maxArr@{maxArr}!MAT.c@{MAT.c}}
+\doxysubsubsection{\texorpdfstring{maxArr}{maxArr}}
+{\footnotesize\ttfamily int$\ast$$\ast$ max\+Arr}
+
+
+
+Stores the corresponding block number to a part outside or inside the image. 
+
+\mbox{\Hypertarget{MAT_8c_a1f65e4f24fa97823a609dfd553d8d626}\label{MAT_8c_a1f65e4f24fa97823a609dfd553d8d626}} 
+\index{MAT.c@{MAT.c}!root@{root}}
+\index{root@{root}!MAT.c@{MAT.c}}
+\doxysubsubsection{\texorpdfstring{root}{root}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structquadtree}{quadtree}}$\ast$ root}
+
+
+
+Declares the quadtree. 
+

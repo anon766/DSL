@@ -1,6 +1,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <math.h>
+# include <time.h>
 /**
  * Defines the data of each node in the quadtree
  */
@@ -194,8 +195,7 @@ void printTree(quadtree* temp)
 		printTree(temp->ne);
 		printTree(temp->sw);
 		printTree(temp->se);
-		if(temp->data.bit!=-1)
-			printf("(%d, %d, %d)\n",temp->data.label, temp->data.bit, temp->data.level);
+		printf("(%d, %d, %d)\n",temp->data.label, temp->data.bit, temp->data.level);
 	}
 }
 /**
@@ -215,6 +215,8 @@ void print(int *arr[], int size)
 }
 int main()
 {
+	clock_t t;
+	t=clock();
 	root=insert();
 	FILE* input=fopen("input.txt","r");
 	int dim=dimension(input);
@@ -228,15 +230,19 @@ int main()
 	for(int i=0; i<size; i++)
 		maxArr[i]=(int*)malloc(size*sizeof(int));
 	read(input,size, dim);
-	print(imageBin,size);
 	createMaximalArr(0, size, 0, size);
 	counter=1;
 	createQuadtree(0, size, 0, size, root);
+	printf("Maximal Array: \n");
 	print(maxArr,size);
+	printf("Quadtree nodes: \n");
 	printTree(root);
 	free(imageBin);
 	free(maxArr);	
 	fclose(input);
+	t=clock()-t;
+	double cpuTime=((double)t)/CLOCKS_PER_SEC;
+	printf("CPU time: %f\n", cpuTime);
 	return 0;
 }
 	

@@ -181,8 +181,8 @@ int main()
 		scanf("%d", &x);
 		printf("\nEnter y value: ");
 		scanf("%d", &y);
+		greenOnly();
 		pixelValue(x-1,y-1);
-		greenRemove();
 		write(redOutput,r);
 		write(greenOutput,g);
 		write(blueOutput,b);
