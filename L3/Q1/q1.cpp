@@ -81,7 +81,7 @@ class BST
 		{
 			getInorderTraversal(root, a, size);
 			for(int i=0; i<size; i++)
-				cout<<a[i]<<"\n";
+				cout<<a[i]<<" ";
 		}
 		void printArr(int a[], int len)
 		{
@@ -251,7 +251,7 @@ class RBT : public BST
 			for(int i=0; i<level; i++)
 				cout<<"\t";
 			cout<<temp->num<<"["<<level<<"]";
-			if(temp->colour)
+			if(!temp->colour)
 				cout<<"RED\n";
 			else
 				cout<<"BLACK\n";
@@ -260,49 +260,75 @@ class RBT : public BST
 		}
 
 };
-/*class AVL : public BST
+class AVL : public BST
 {
 	public: 
-		void getBalance(int h1, int h2)
+		int getBalance(int h1, int h2)
 		{
 			return h1-h2;
 		}
-		void insert(Node* temp, int n)
+		Node* leftRotate(Node* temp)
 		{
-			if(root==NULL)
+			Node* tempLeft=temp->left;
+			temp->left=tempLeft->right;
+			tempLeft->right=temp;
+			temp->height=1+max(getHeight(temp->left), getHeight(temp->right));
+			tempLeft->height=1+max(getHeight(tempLeft->left), getHeight(tempLeft->right));
+			return tempLeft;
+		}
+		Node* rightRotate(Node* temp)
+		{
+			Node* tempRight=temp->right;
+			temp->right=tempRight->left;
+			tempRight->left=temp;
+			temp->height=1+max(getHeight(temp->left), getHeight(temp->right));
+			tempRight->height=1+max(getHeight(tempRight->left), getHeight(tempRight->right));
+			return tempRight;
+		}
+		Node* insert(Node* temp, int n)
+		{
+			if(temp==NULL)
 			{
-				root=new Node(n);
-				return;
+				temp=new Node(n);
+				return temp;
 			}
 			if(n>temp->num)
 			{
-				if(temp->right==NULL)
-					temp->right=new Node(n);
-				else
-					insert(temp->right, n);
+				temp->right=insert(temp->right, n);
 			}
 			else if(n<temp->num)
 			{
-				if(temp->left==NULL)
-					temp->left=new Node(n);
-				else
-					 insert(temp->left,n);
+				temp->left=insert(temp->left,n);
 			}
 			temp->height=1+max(getHeight(temp->right), getHeight(temp->left));
 			int balance=getHeight(temp->left)-getHeight(temp->right);
-			if(balance>1 && n>temp->num)
+			if(balance>1 && n<temp->num)
+				temp=leftRotate(temp);
+			else if(balance>1 && n>temp->num)
 			{
-
+				temp->right=rightRotate(temp->right);
+				temp=leftRotate(temp);
+			}
+			else if(balance<-1 && n>temp->num)
+				temp=rightRotate(temp);
+			else if(balance<-1 && n<temp->num)
+			{
+				temp->left=leftRotate(temp->left);
+				temp=rightRotate(temp);
+			}
+			return temp;
+		}
 		void create(int a[], int size)
 		{
+			root=NULL;
 			for(int i=0; i<size; i++)
-				insert(root,a[i]);
+				root=insert(root,a[i]);
 		}
-};*/		
+};		
 int main()
 {
 	BST treeBST;
-	//AVL treeAVL;
+	AVL treeAVL;
 	RBT treeRBT;
 	do
 	{
@@ -323,19 +349,28 @@ int main()
 				treeBST.insert(treeBST.root, n);
 				treeRBT.insert(treeRBT.root, n);
 				break;
-			case 2: //treeBST.getInorderTraversal(a, size);
-				//treeAVL.create(a, size);
+			case 2: treeBST.getInorderTraversal(treeBST.root, a, size);
+				treeAVL.create(a, size);
 				break;
-			case 3: treeBST.printInorderTraversal(a, size);
-				//rootAVL.inorderTraversal();
+			case 3: cout<<"\nBST: ";
+				treeBST.printInorderTraversal(a, size);
+				cout<<"\nAVL: ";
+				treeAVL.printInorderTraversal(a, size);
+				cout<<"\nRed Black tree: ";
 				treeRBT.printInorderTraversal(a, size);
 				break;
-			case 4: treeBST.displayPaths(treeBST.root, a, len);
-				//rootAVL.displayPaths();
+			case 4: cout<<"\nBST: ";
+				treeBST.displayPaths(treeBST.root, a, len);
+				cout<<"\nAVL: ";
+				treeAVL.displayPaths(treeAVL.root, a, len);
+				cout<<"\nRed Black tree: ";
 				treeRBT.displayPaths(treeRBT.root, a, len);
 				break;
-			case 5: treeBST.print(treeBST.root, level);
-				//rootAVL.print();
+			case 5: cout<<"\nBST: ";
+				treeBST.print(treeBST.root, level);
+				cout<<"\nAVL: ";
+				treeAVL.print(treeAVL.root, level);
+				cout<<"\nRed Black tree: ";
 				treeRBT.print(treeRBT.root, level);
 				break;
 			case 6: return 0;
