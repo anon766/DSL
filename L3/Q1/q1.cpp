@@ -1,15 +1,18 @@
 # include <bits/stdc++.h>
 using namespace std;
-enum colour {red, black};
+enum colour {red, black};//!<Declares enum to denote colour of node in red black tree where 0 is red and 1 is black
+/**
+ * Defines the node for all the trees , ie, BST, AVL, red black tree
+ */
 class Node
 {
 	public:
-		int num;
-		Node* left;
-		Node* right;
-		Node* parent;
-		int height;
-		int colour;//!<0 for black and 1 for red
+		int num;//!<Value of the node
+		Node* left;//!<Point to left child
+		Node* right;//!<Point to right child
+		Node* parent;//!<Point to parent (used in Red Black tree)
+		int height;//!<Stores height of node from deepest leaf in its subtrees
+		int colour;//!<1 for black and 0 for red
 		Node(int n)
 		{
 			num=n;
@@ -19,16 +22,22 @@ class Node
 			parent=NULL;
 			colour=red;
 		}
-		//virtual void insert() =0;
 };
+/**
+ * Defines Binary Search Tree with a root
+ */
 class BST 
 {
 	public: 
-		Node* root;
+		Node* root;//!<Root of the tree
 		BST()
 		{
 			root=NULL;
 		}
+		/**
+		 * returns the height of the node.
+		 * @param temp the node's height to be returned
+		 */
 		int getHeight(Node* temp)
 		{
 			if(temp==NULL)
@@ -36,14 +45,11 @@ class BST
 			else
 				return temp->height;
 		}
-		/*Node* newNode(int n)
-		{
-			Node* node=new Node;
-			node->num=n;
-			node->right=NULL;
-			node->left=NULL;
-			return node;
-		}*/
+		/**
+		 * Insert node into the tree and calculates height of each node along the way and updates too.
+		 * @param temp the node being inserted into the tree
+		 * @param n the value of the node being inserted
+		 */
 		void insert(Node* temp, int n)
 		{	
 			if(root==NULL)
@@ -66,23 +72,39 @@ class BST
 					insert(temp->left, n);
 			}
 			temp->height=1+max(getHeight(temp->right), getHeight(temp->left));
-		}	
+
+		}
+    		/**
+		 * Stores the inorder traversal in an array.
+		 * @param temp the current node whose left and right child are going to be checked
+		 * @param a the array in which the inorder traversal is stored
+		 * @param size the size of the array
+		 */		
 		void getInorderTraversal(Node* temp, int a[], int &size)
 		{
 			if(temp==NULL)
 				return;
 			getInorderTraversal(temp->left, a, size);
-			//cout<<temp->num<<"\n";
 			a[size]=temp->num;
 			size++;
 			getInorderTraversal(temp->right, a, size);
 		}
+		/**
+		 * Prints the inorder traversal array.
+		 * @param a the array containing the inorder traversal
+		 * @param size the size of the array
+		 */
 		void printInorderTraversal(int a[], int size)
 		{
 			getInorderTraversal(root, a, size);
 			for(int i=0; i<size; i++)
 				cout<<a[i]<<" ";
 		}
+		/**
+		 * Prints all the paths from node A to leaf node B. 
+		 * @param a the array containing all the nodes between A and B
+		 * @param len the length of the array
+		 */
 		void printArr(int a[], int len)
 		{
 			for(int i=0; i<len; i++)
@@ -94,6 +116,12 @@ class BST
 				cout<<a[len-1]<<"\n";
 			}
 		}
+		/**
+		 * Calculates all the paths by performing depth first search using recursion.
+		 * @param temp the current node in the tree thats being searched recursively
+		 * @param a the array containing all the nodes between A and B
+		 * @param len the length of the array
+		 */
 		void displayPaths(Node* temp, int a[], int len)
 		{
 			if(temp==NULL)
@@ -108,23 +136,39 @@ class BST
 			displayPaths(temp->left,a,len);
 			displayPaths(temp->right,a,len);
 		}
+		/**
+		 * prints the level wise indentation of the tree in the terminal.
+		 * @param temp the current node being printed
+		 * @param level the depth of a node to decide the amount of indentation
+		 */
 		void print(Node* temp, int level)
 		{
 			if(temp==NULL)
 				return;
 			for(int i=0; i<level; i++)
 				cout<<"\t";
-			cout<<temp->num<<"["<<level<<"]"<<"\n";
+			int balance=abs(getHeight(temp->left)-getHeight(temp->right));
+			if(temp->right==NULL && temp->left==NULL)
+				cout<<temp->num<<"\n";
+			else
+				cout<<temp->num<<"["<<balance<<"]"<<"\n";
 			print(temp->left, level+1);
 			print(temp->right, level+1);
 		}
 };
+/**
+ * Defines a Red Black Tree with proper insertion employing recolouring and rotations too
+ */
 class RBT : public BST
 {
 	public: 
 		RBT():BST()
 		{
 		}
+		/** 
+		 * Performs a left rotation when balance>1 and returns the new root of the subtree after the rotation. 
+		 * @param temp the node whose balance>1 and needs to be rotated
+		 */
 		Node* leftRotate(Node* temp)
 		{
 			Node* tempLeft=temp->left;
@@ -142,8 +186,14 @@ class RBT : public BST
 				temp->parent->right=tempLeft;
 			temp->parent=tempLeft;
 			tempLeft->right=temp;
+			temp->height=1+max(getHeight(temp->left), getHeight(temp->right));
+			tempLeft->height=1+max(getHeight(tempLeft->left), getHeight(tempLeft->right));
 			return tempLeft;
 		}
+		/** 
+	 	 * Performs a right rotation when balance<1 and returns the new root of the subtree after the rotation .
+		 * @param temp the node whose balance<1 and needs to be rotated
+		 */
 		Node* rightRotate(Node* temp)
 		{
 			Node* tempRight=temp->right;
@@ -161,8 +211,14 @@ class RBT : public BST
 				temp->parent->right=tempRight;
 			temp->parent=tempRight;
 			tempRight->left=temp;
+			temp->height=1+max(getHeight(temp->left), getHeight(temp->right));
+			tempRight->height=1+max(getHeight(tempRight->left), getHeight(tempRight->right));
 			return tempRight;
 		}
+		/**
+		 * First tries to balance using recolouring and then using rotations.
+		 * @param temp the current node who is violating red black tree property
+		 */
 		void recolour(Node* temp)
 		{
 			Node* parent=NULL;
@@ -212,6 +268,11 @@ class RBT : public BST
 			}		
 			root->colour=black;
 		}
+		/**
+		 * Insert a node into a red black tree.
+		 * @param temp the current node being inserted
+		 * @oaram n the value of the node
+		 */
 		void insert(Node* temp, int n)
 		{
 			if(root==NULL)
@@ -242,19 +303,29 @@ class RBT : public BST
 				else
 					insert(temp->left, n);
 			}
+			temp->height=1+max(getHeight(temp->left), getHeight(temp->right));
 			recolour(temp);
 		}
+		/**
+		 * Prints level wise indentation along with colour of tree and balance factor.
+		 * @param temp the current node being printed
+		 * @param level the depth of a node
+		 */
 		void print(Node* temp, int level)
 		{
 			if(temp==NULL)
 				return;
 			for(int i=0; i<level; i++)
 				cout<<"\t";
-			cout<<temp->num<<"["<<level<<"]";
-			if(!temp->colour)
-				cout<<"RED\n";
+			int balance=abs(getHeight(temp->left)-getHeight(temp->right));
+			if(temp->right==NULL && temp->left==NULL)
+				cout<<temp->num;
 			else
-				cout<<"BLACK\n";
+				cout<<temp->num<<"["<<balance<<"]";
+			if(!temp->colour)
+				cout<<"[RED]\n";
+			else
+				cout<<"[BLACK]\n";
 			print(temp->left, level+1);
 			print(temp->right, level+1);
 		}
@@ -267,6 +338,10 @@ class AVL : public BST
 		{
 			return h1-h2;
 		}
+		/**
+		 * Performs a left rotation when balance>1 and returns the new root of the subtree after the rotation .
+		 * @param temp the node whose balance>1 and needs to be rotated
+		 */
 		Node* leftRotate(Node* temp)
 		{
 			Node* tempLeft=temp->left;
@@ -276,6 +351,10 @@ class AVL : public BST
 			tempLeft->height=1+max(getHeight(tempLeft->left), getHeight(tempLeft->right));
 			return tempLeft;
 		}
+		/** 
+		 * Performs a right rotation when balance<1 and returns the new root of the subtree after the rotation .
+		 * @param temp the node whose balance<1 and needs to be rotated
+		 */
 		Node* rightRotate(Node* temp)
 		{
 			Node* tempRight=temp->right;
@@ -285,6 +364,11 @@ class AVL : public BST
 			tempRight->height=1+max(getHeight(tempRight->left), getHeight(tempRight->right));
 			return tempRight;
 		}
+		/**
+		 * Inserts into a tree and checks for violation in balance factors and performing the appropriate rotations.
+		 * @param temp the current node being inserted into the AVL tree
+		 * @param n the value of the node
+		 */
 		Node* insert(Node* temp, int n)
 		{
 			if(temp==NULL)
@@ -318,6 +402,11 @@ class AVL : public BST
 			}
 			return temp;
 		}
+		/**
+		 * Creates an AVL tree using the inorder traversal array and inserts one by one.
+		 * @param a stores the inorder traversal of the tree
+		 * @param size stores the size of the array
+		 */
 		void create(int a[], int size)
 		{
 			root=NULL;
@@ -327,6 +416,8 @@ class AVL : public BST
 };		
 int main()
 {
+	clock_t t;
+	t=clock();
 	BST treeBST;
 	AVL treeAVL;
 	RBT treeRBT;
@@ -352,28 +443,31 @@ int main()
 			case 2: treeBST.getInorderTraversal(treeBST.root, a, size);
 				treeAVL.create(a, size);
 				break;
-			case 3: cout<<"\nBST: ";
+			case 3: cout<<"\nBST:\n";
 				treeBST.printInorderTraversal(a, size);
-				cout<<"\nAVL: ";
+				cout<<"\nAVL:\n";
 				treeAVL.printInorderTraversal(a, size);
-				cout<<"\nRed Black tree: ";
+				cout<<"\nRed Black tree: \n";
 				treeRBT.printInorderTraversal(a, size);
 				break;
-			case 4: cout<<"\nBST: ";
+			case 4: cout<<"\nBST:\n";
 				treeBST.displayPaths(treeBST.root, a, len);
-				cout<<"\nAVL: ";
+				cout<<"\nAVL: \n";
 				treeAVL.displayPaths(treeAVL.root, a, len);
-				cout<<"\nRed Black tree: ";
+				cout<<"\nRed Black tree: \n";
 				treeRBT.displayPaths(treeRBT.root, a, len);
 				break;
-			case 5: cout<<"\nBST: ";
+			case 5: cout<<"\nBST: \n";
 				treeBST.print(treeBST.root, level);
-				cout<<"\nAVL: ";
+				cout<<"\nAVL: \n";
 				treeAVL.print(treeAVL.root, level);
-				cout<<"\nRed Black tree: ";
+				cout<<"\nRed Black tree: \n";
 				treeRBT.print(treeRBT.root, level);
 				break;
-			case 6: return 0;
+			case 6: t=clock()-t;
+				double cpuTime=(double)t/CLOCKS_PER_SEC;
+				cout<<"CPU time: "<<cpuTime<<"\n";
+				return 0;
 		}
 	}while(1);
 }
