@@ -3,6 +3,7 @@ using namespace std;
 int main()
 {
 	map <int, int> hashmap;
+	hashmap[0]=-1;
 	int size,n;
 	cin>>size;
 	int* prefixSum=new int[size];
