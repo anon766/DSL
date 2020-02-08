@@ -2,6 +2,8 @@
 using namespace std;
 int main()
 {
+	clock_t t;
+       	t=clock();	
 	map <int, int> hashmap;
 	hashmap[0]=-1;
 	int size,n;
@@ -43,4 +45,7 @@ int main()
 	}
 	else
 		cout<<"\nNot Found\n";
+	t=clock()-t;
+	double cpuTime=double(t)/CLOCKS_PER_SEC;
+	cout<<"CPU time: "<<cpuTime<<"\n";
 }

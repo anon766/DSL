@@ -25,11 +25,18 @@ void decrypt(char inputStr[],int n, int a, int b, FILE* output)
 			outputStr[index[j]+i*n]=inputStr[j+i*n];
 		}
 	}
-	char str[2];
+	printf("Decrypted string is: ");
+	for(int i=0; i<len; i++)
+	{
+		if(outputStr[i]!=char(224))
+			printf("%c", outputStr[i]);
+	}
+	printf("\n");
+	/*char str[2];
 	str[0]=224;
 	str[1]='\0';
 	outputStr[strcspn(outputStr,str)]='\0';
-	printf("Decrypted string is: %s\n", outputStr);
+	printf("Decrypted string is: %s\n", outputStr);*/
 	fprintf(output,"%s\n",outputStr);
 	free(index);
 	free(outputStr);
