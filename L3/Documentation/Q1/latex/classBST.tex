@@ -1,0 +1,158 @@
+\hypertarget{classBST}{}\doxysection{B\+ST Class Reference}
+\label{classBST}\index{BST@{BST}}
+Inheritance diagram for B\+ST\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classBST}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBST_abc17123a0367c3b8ad0382eeb3ad3178}{B\+ST}} ()
+\item 
+int \mbox{\hyperlink{classBST_ac43bb5a95775095d5b9d09f64818effc}{get\+Height}} (\mbox{\hyperlink{classNode}{Node}} $\ast$temp)
+\item 
+void \mbox{\hyperlink{classBST_a632332ee86dd602434a2135f83269102}{insert}} (\mbox{\hyperlink{classNode}{Node}} $\ast$temp, int n)
+\item 
+void \mbox{\hyperlink{classBST_a1479e7a6e3ce91721b201c7920bca68f}{get\+Inorder\+Traversal}} (\mbox{\hyperlink{classNode}{Node}} $\ast$temp, int a\mbox{[}$\,$\mbox{]}, int \&size)
+\item 
+void \mbox{\hyperlink{classBST_a594f9ffab70d396639609c40b94d7b5d}{print\+Inorder\+Traversal}} (int a\mbox{[}$\,$\mbox{]}, int size)
+\item 
+void \mbox{\hyperlink{classBST_a80f461cb6a7f7f146c6456639e3239bd}{print\+Arr}} (int a\mbox{[}$\,$\mbox{]}, int len)
+\item 
+void \mbox{\hyperlink{classBST_ab5e850b4b047a23a6ea2a353a1360b60}{display\+Paths}} (\mbox{\hyperlink{classNode}{Node}} $\ast$temp, int a\mbox{[}$\,$\mbox{]}, int len)
+\item 
+void \mbox{\hyperlink{classBST_a3573e67c59657cd446de1faf68b8acee}{print}} (\mbox{\hyperlink{classNode}{Node}} $\ast$temp, int level)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classNode}{Node}} $\ast$ \mbox{\hyperlink{classBST_a2fe6f9051e991d1b71ead4bd83477a71}{root}}
+\begin{DoxyCompactList}\small\item\em Root of the tree. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines Binary Search Tree with a root 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classBST_abc17123a0367c3b8ad0382eeb3ad3178}\label{classBST_abc17123a0367c3b8ad0382eeb3ad3178}} 
+\index{BST@{BST}!BST@{BST}}
+\index{BST@{BST}!BST@{BST}}
+\doxysubsubsection{\texorpdfstring{BST()}{BST()}}
+{\footnotesize\ttfamily B\+S\+T\+::\+B\+ST (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classBST_ab5e850b4b047a23a6ea2a353a1360b60}\label{classBST_ab5e850b4b047a23a6ea2a353a1360b60}} 
+\index{BST@{BST}!displayPaths@{displayPaths}}
+\index{displayPaths@{displayPaths}!BST@{BST}}
+\doxysubsubsection{\texorpdfstring{displayPaths()}{displayPaths()}}
+{\footnotesize\ttfamily void B\+S\+T\+::display\+Paths (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classNode}{Node}} $\ast$}]{temp,  }\item[{int}]{a\mbox{[}$\,$\mbox{]},  }\item[{int}]{len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Calculates all the paths by performing depth first search using recursion. 
+\begin{DoxyParams}{Parameters}
+{\em temp} & the current node in the tree thats being searched recursively \\
+\hline
+{\em a} & the array containing all the nodes between A and B \\
+\hline
+{\em len} & the length of the array \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBST_ac43bb5a95775095d5b9d09f64818effc}\label{classBST_ac43bb5a95775095d5b9d09f64818effc}} 
+\index{BST@{BST}!getHeight@{getHeight}}
+\index{getHeight@{getHeight}!BST@{BST}}
+\doxysubsubsection{\texorpdfstring{getHeight()}{getHeight()}}
+{\footnotesize\ttfamily int B\+S\+T\+::get\+Height (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classNode}{Node}} $\ast$}]{temp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+returns the height of the node. 
+\begin{DoxyParams}{Parameters}
+{\em temp} & the node\textquotesingle{}s height to be returned \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBST_a1479e7a6e3ce91721b201c7920bca68f}\label{classBST_a1479e7a6e3ce91721b201c7920bca68f}} 
+\index{BST@{BST}!getInorderTraversal@{getInorderTraversal}}
+\index{getInorderTraversal@{getInorderTraversal}!BST@{BST}}
+\doxysubsubsection{\texorpdfstring{getInorderTraversal()}{getInorderTraversal()}}
+{\footnotesize\ttfamily void B\+S\+T\+::get\+Inorder\+Traversal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classNode}{Node}} $\ast$}]{temp,  }\item[{int}]{a\mbox{[}$\,$\mbox{]},  }\item[{int \&}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Stores the inorder traversal in an array. 
+\begin{DoxyParams}{Parameters}
+{\em temp} & the current node whose left and right child are going to be checked \\
+\hline
+{\em a} & the array in which the inorder traversal is stored \\
+\hline
+{\em size} & the size of the array \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBST_a632332ee86dd602434a2135f83269102}\label{classBST_a632332ee86dd602434a2135f83269102}} 
+\index{BST@{BST}!insert@{insert}}
+\index{insert@{insert}!BST@{BST}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily void B\+S\+T\+::insert (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classNode}{Node}} $\ast$}]{temp,  }\item[{int}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Insert node into the tree and calculates height of each node along the way and updates too. 
+\begin{DoxyParams}{Parameters}
+{\em temp} & the node being inserted into the tree \\
+\hline
+{\em n} & the value of the node being inserted \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBST_a3573e67c59657cd446de1faf68b8acee}\label{classBST_a3573e67c59657cd446de1faf68b8acee}} 
+\index{BST@{BST}!print@{print}}
+\index{print@{print}!BST@{BST}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void B\+S\+T\+::print (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classNode}{Node}} $\ast$}]{temp,  }\item[{int}]{level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+prints the level wise indentation of the tree in the terminal. 
+\begin{DoxyParams}{Parameters}
+{\em temp} & the current node being printed \\
+\hline
+{\em level} & the depth of a node to decide the amount of indentation \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBST_a80f461cb6a7f7f146c6456639e3239bd}\label{classBST_a80f461cb6a7f7f146c6456639e3239bd}} 
+\index{BST@{BST}!printArr@{printArr}}
+\index{printArr@{printArr}!BST@{BST}}
+\doxysubsubsection{\texorpdfstring{printArr()}{printArr()}}
+{\footnotesize\ttfamily void B\+S\+T\+::print\+Arr (\begin{DoxyParamCaption}\item[{int}]{a\mbox{[}$\,$\mbox{]},  }\item[{int}]{len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Prints all the paths from node A to leaf node B. 
+\begin{DoxyParams}{Parameters}
+{\em a} & the array containing all the nodes between A and B \\
+\hline
+{\em len} & the length of the array \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBST_a594f9ffab70d396639609c40b94d7b5d}\label{classBST_a594f9ffab70d396639609c40b94d7b5d}} 
+\index{BST@{BST}!printInorderTraversal@{printInorderTraversal}}
+\index{printInorderTraversal@{printInorderTraversal}!BST@{BST}}
+\doxysubsubsection{\texorpdfstring{printInorderTraversal()}{printInorderTraversal()}}
+{\footnotesize\ttfamily void B\+S\+T\+::print\+Inorder\+Traversal (\begin{DoxyParamCaption}\item[{int}]{a\mbox{[}$\,$\mbox{]},  }\item[{int}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Prints the inorder traversal array. 
+\begin{DoxyParams}{Parameters}
+{\em a} & the array containing the inorder traversal \\
+\hline
+{\em size} & the size of the array \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classBST_a2fe6f9051e991d1b71ead4bd83477a71}\label{classBST_a2fe6f9051e991d1b71ead4bd83477a71}} 
+\index{BST@{BST}!root@{root}}
+\index{root@{root}!BST@{BST}}
+\doxysubsubsection{\texorpdfstring{root}{root}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classNode}{Node}}$\ast$ B\+S\+T\+::root}
+
+
+
+Root of the tree. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/anon/\+Documents/\+L3/\+Q1/\mbox{\hyperlink{q1_8cpp}{q1.\+cpp}}\end{DoxyCompactItemize}

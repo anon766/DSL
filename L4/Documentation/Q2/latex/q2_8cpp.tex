@@ -1,0 +1,85 @@
+\hypertarget{q2_8cpp}{}\doxysection{/home/anon/\+Documents/\+L4/\+Q2/q2.cpp File Reference}
+\label{q2_8cpp}\index{/home/anon/Documents/L4/Q2/q2.cpp@{/home/anon/Documents/L4/Q2/q2.cpp}}
+{\ttfamily \#include $<$bits/stdc++.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int $\ast$$\ast$ \mbox{\hyperlink{q2_8cpp_a536cc1a10d08153fa9f2c86e41758323}{make\+Board}} (int $\ast$board\mbox{[}$\,$\mbox{]}, int n)
+\item 
+void \mbox{\hyperlink{q2_8cpp_afae5d52e0d0879f1726c52310a06f639}{print\+Board}} (int $\ast$board\mbox{[}$\,$\mbox{]}, int n)
+\item 
+bool \mbox{\hyperlink{q2_8cpp_ab4ac38fe59235f821d96288831399bd0}{check\+Queen}} (int $\ast$board\mbox{[}$\,$\mbox{]}, int x, int y, int n)
+\item 
+void \mbox{\hyperlink{q2_8cpp_ad4ba68af3b60c65742c990029ec16571}{find\+Board}} (int $\ast$board\mbox{[}$\,$\mbox{]}, int queen\+Number, int size, int \&count)
+\item 
+int \mbox{\hyperlink{q2_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{q2_8cpp_ab4ac38fe59235f821d96288831399bd0}\label{q2_8cpp_ab4ac38fe59235f821d96288831399bd0}} 
+\index{q2.cpp@{q2.cpp}!checkQueen@{checkQueen}}
+\index{checkQueen@{checkQueen}!q2.cpp@{q2.cpp}}
+\doxysubsubsection{\texorpdfstring{checkQueen()}{checkQueen()}}
+{\footnotesize\ttfamily bool check\+Queen (\begin{DoxyParamCaption}\item[{int $\ast$}]{board\mbox{[}$\,$\mbox{]},  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{n }\end{DoxyParamCaption})}
+
+Checks if the current position of the new inserted queen is under attack due to already previous queens present on the board. 
+\begin{DoxyParams}{Parameters}
+{\em board} & The 2D array \\
+\hline
+{\em x} & The row index \\
+\hline
+{\em y} & The column index \\
+\hline
+{\em n} & The dimension of the board. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{q2_8cpp_ad4ba68af3b60c65742c990029ec16571}\label{q2_8cpp_ad4ba68af3b60c65742c990029ec16571}} 
+\index{q2.cpp@{q2.cpp}!findBoard@{findBoard}}
+\index{findBoard@{findBoard}!q2.cpp@{q2.cpp}}
+\doxysubsubsection{\texorpdfstring{findBoard()}{findBoard()}}
+{\footnotesize\ttfamily void find\+Board (\begin{DoxyParamCaption}\item[{int $\ast$}]{board\mbox{[}$\,$\mbox{]},  }\item[{int}]{queen\+Number,  }\item[{int}]{size,  }\item[{int \&}]{count }\end{DoxyParamCaption})}
+
+Tries to find the possible solutions to N queen problem where N queens are placed in a NxN board, and each is not under attack due to the others. 
+\begin{DoxyParams}{Parameters}
+{\em board} & The 2D array \\
+\hline
+{\em queen\+Number} & The number of queens that are currently left to be placed \\
+\hline
+{\em size} & The dimension of the board \\
+\hline
+{\em count} & The number of solutions to the problem \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{q2_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{q2_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{q2.cpp@{q2.cpp}!main@{main}}
+\index{main@{main}!q2.cpp@{q2.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{q2_8cpp_a536cc1a10d08153fa9f2c86e41758323}\label{q2_8cpp_a536cc1a10d08153fa9f2c86e41758323}} 
+\index{q2.cpp@{q2.cpp}!makeBoard@{makeBoard}}
+\index{makeBoard@{makeBoard}!q2.cpp@{q2.cpp}}
+\doxysubsubsection{\texorpdfstring{makeBoard()}{makeBoard()}}
+{\footnotesize\ttfamily int$\ast$$\ast$ make\+Board (\begin{DoxyParamCaption}\item[{int $\ast$}]{board\mbox{[}$\,$\mbox{]},  }\item[{int}]{n }\end{DoxyParamCaption})}
+
+Makes a 2D array of n x n dimension. 
+\begin{DoxyParams}{Parameters}
+{\em board} & The 2D array \\
+\hline
+{\em n} & The dimension of the square matrix \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{q2_8cpp_afae5d52e0d0879f1726c52310a06f639}\label{q2_8cpp_afae5d52e0d0879f1726c52310a06f639}} 
+\index{q2.cpp@{q2.cpp}!printBoard@{printBoard}}
+\index{printBoard@{printBoard}!q2.cpp@{q2.cpp}}
+\doxysubsubsection{\texorpdfstring{printBoard()}{printBoard()}}
+{\footnotesize\ttfamily void print\+Board (\begin{DoxyParamCaption}\item[{int $\ast$}]{board\mbox{[}$\,$\mbox{]},  }\item[{int}]{n }\end{DoxyParamCaption})}
+
+Prints the board with 1 as queen and 0 as empty boxes. 
+\begin{DoxyParams}{Parameters}
+{\em board} & The 2D array \\
+\hline
+{\em n} & The dimension of the board \\
+\hline
+\end{DoxyParams}

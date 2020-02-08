@@ -1,0 +1,30 @@
+Manifest-Version: 1.0
+Bundle-Description: A Java class library for graph-theory data structu
+ res and algorithms.
+Automatic-Module-Name: org.jgrapht.io
+Bundle-License: http://jgrapht.sourceforge.net/LGPL.html, http://www.e
+ clipse.org/legal/epl-v20.html
+Bundle-SymbolicName: org.jgrapht.io
+Archiver-Version: Plexus Archiver
+Built-By: jkinable
+Bnd-LastModified: 1559562728192
+Bundle-ManifestVersion: 2
+Bundle-Vendor: Barak Naveh, John V. Sichi and contributors
+Import-Package: javax.xml.parsers,javax.xml.transform,javax.xml.transf
+ orm.sax,javax.xml.transform.stream,javax.xml.validation,org.antlr.v4.
+ runtime;version="[4.7,5)",org.antlr.v4.runtime.atn;version="[4.7,5)",
+ org.antlr.v4.runtime.dfa;version="[4.7,5)",org.antlr.v4.runtime.misc;
+ version="[4.7,5)",org.antlr.v4.runtime.tree;version="[4.7,5)",org.apa
+ che.commons.text;version="[1.6,2)",org.apache.commons.text.translate;
+ version="[1.6,2)",org.jgrapht;version="[1.3,2)",org.jgrapht.alg.util;
+ version="[1.3,2)",org.jgrapht.util;version="[1.3,2)",org.xml.sax,org.
+ xml.sax.helpers
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+Tool: Bnd-3.5.0.201709291849
+Export-Package: org.jgrapht.io;uses:="org.antlr.v4.runtime,org.antlr.v
+ 4.runtime.tree,org.jgrapht";version="1.3.1"
+Bundle-Name: JGraphT - I/O
+Bundle-Version: 1.3.1
+Created-By: Apache Maven Bundle Plugin
+Build-Jdk: 1.8.0_201
+

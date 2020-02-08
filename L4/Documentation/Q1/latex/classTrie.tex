@@ -1,0 +1,84 @@
+\hypertarget{classTrie}{}\doxysection{Trie Class Reference}
+\label{classTrie}\index{Trie@{Trie}}
+
+
+{\ttfamily \#include $<$dictionary.\+h$>$}
+
+Inheritance diagram for Trie\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classTrie}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTrie_a6af57e9f25d0d0a2d59eea5a4a802908}{Trie}} ()
+\item 
+void \mbox{\hyperlink{classTrie_acbc9f10a9259de674525f51d50c8e397}{insert}} (Q\+String word, Q\+String definition)
+\item 
+Q\+String \mbox{\hyperlink{classTrie_ac26a0122c7753a4d77fcafde34bd47f9}{search}} (Q\+String word)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classNode}{Node}} $\ast$ \mbox{\hyperlink{classTrie_ab16619596d0d3d177bdf44b82b39312d}{root}}
+\begin{DoxyCompactList}\small\item\em root of the trie. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The trie that contains the root node to the dictionary. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTrie_a6af57e9f25d0d0a2d59eea5a4a802908}\label{classTrie_a6af57e9f25d0d0a2d59eea5a4a802908}} 
+\index{Trie@{Trie}!Trie@{Trie}}
+\index{Trie@{Trie}!Trie@{Trie}}
+\doxysubsubsection{\texorpdfstring{Trie()}{Trie()}}
+{\footnotesize\ttfamily Trie\+::\+Trie (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTrie_acbc9f10a9259de674525f51d50c8e397}\label{classTrie_acbc9f10a9259de674525f51d50c8e397}} 
+\index{Trie@{Trie}!insert@{insert}}
+\index{insert@{insert}!Trie@{Trie}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily void Trie\+::insert (\begin{DoxyParamCaption}\item[{Q\+String}]{word,  }\item[{Q\+String}]{definition }\end{DoxyParamCaption})}
+
+Inserts a word into the trie. 
+\begin{DoxyParams}{Parameters}
+{\em word} & The word to be inserted \\
+\hline
+{\em definition} & The definition of the word to be outputted \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTrie_ac26a0122c7753a4d77fcafde34bd47f9}\label{classTrie_ac26a0122c7753a4d77fcafde34bd47f9}} 
+\index{Trie@{Trie}!search@{search}}
+\index{search@{search}!Trie@{Trie}}
+\doxysubsubsection{\texorpdfstring{search()}{search()}}
+{\footnotesize\ttfamily Q\+String Trie\+::search (\begin{DoxyParamCaption}\item[{Q\+String}]{word }\end{DoxyParamCaption})}
+
+Seaches a word in the dictionary and returns its meaning. 
+\begin{DoxyParams}{Parameters}
+{\em word} & The word whose definition is to be outputted. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classTrie_ab16619596d0d3d177bdf44b82b39312d}\label{classTrie_ab16619596d0d3d177bdf44b82b39312d}} 
+\index{Trie@{Trie}!root@{root}}
+\index{root@{root}!Trie@{Trie}}
+\doxysubsubsection{\texorpdfstring{root}{root}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classNode}{Node}}$\ast$ Trie\+::root}
+
+
+
+root of the trie. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/anon/\+Documents/\+L4/\+Q1/\+Source\+Code/\mbox{\hyperlink{dictionary_8h}{dictionary.\+h}}\item 
+/home/anon/\+Documents/\+L4/\+Q1/\+Source\+Code/\mbox{\hyperlink{dictionary_8cpp}{dictionary.\+cpp}}\end{DoxyCompactItemize}

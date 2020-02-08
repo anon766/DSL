@@ -1,0 +1,84 @@
+\hypertarget{classAVL}{}\doxysection{A\+VL Class Reference}
+\label{classAVL}\index{AVL@{AVL}}
+Inheritance diagram for A\+VL\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classAVL}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classAVL_a98165ae5ddb5ce9ec052c6ca4a501544}{get\+Balance}} (int h1, int h2)
+\item 
+\mbox{\hyperlink{classNode}{Node}} $\ast$ \mbox{\hyperlink{classAVL_a1af0b384159ccf3b414512c8a197bc01}{left\+Rotate}} (\mbox{\hyperlink{classNode}{Node}} $\ast$temp)
+\item 
+\mbox{\hyperlink{classNode}{Node}} $\ast$ \mbox{\hyperlink{classAVL_afeffc2b1135be2afe87d0aeee5c01b0d}{right\+Rotate}} (\mbox{\hyperlink{classNode}{Node}} $\ast$temp)
+\item 
+\mbox{\hyperlink{classNode}{Node}} $\ast$ \mbox{\hyperlink{classAVL_aa869d7ddc210a5722814a4339e916bbd}{insert}} (\mbox{\hyperlink{classNode}{Node}} $\ast$temp, int n)
+\item 
+void \mbox{\hyperlink{classAVL_a3846b096857496179539ce51d8c96749}{create}} (int a\mbox{[}$\,$\mbox{]}, int size)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classAVL_a3846b096857496179539ce51d8c96749}\label{classAVL_a3846b096857496179539ce51d8c96749}} 
+\index{AVL@{AVL}!create@{create}}
+\index{create@{create}!AVL@{AVL}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily void A\+V\+L\+::create (\begin{DoxyParamCaption}\item[{int}]{a\mbox{[}$\,$\mbox{]},  }\item[{int}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Creates an \mbox{\hyperlink{classAVL}{A\+VL}} tree using the inorder traversal array and inserts one by one. 
+\begin{DoxyParams}{Parameters}
+{\em a} & stores the inorder traversal of the tree \\
+\hline
+{\em size} & stores the size of the array \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAVL_a98165ae5ddb5ce9ec052c6ca4a501544}\label{classAVL_a98165ae5ddb5ce9ec052c6ca4a501544}} 
+\index{AVL@{AVL}!getBalance@{getBalance}}
+\index{getBalance@{getBalance}!AVL@{AVL}}
+\doxysubsubsection{\texorpdfstring{getBalance()}{getBalance()}}
+{\footnotesize\ttfamily int A\+V\+L\+::get\+Balance (\begin{DoxyParamCaption}\item[{int}]{h1,  }\item[{int}]{h2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classAVL_aa869d7ddc210a5722814a4339e916bbd}\label{classAVL_aa869d7ddc210a5722814a4339e916bbd}} 
+\index{AVL@{AVL}!insert@{insert}}
+\index{insert@{insert}!AVL@{AVL}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classNode}{Node}}$\ast$ A\+V\+L\+::insert (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classNode}{Node}} $\ast$}]{temp,  }\item[{int}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Inserts into a tree and checks for violation in balance factors and performing the appropriate rotations. 
+\begin{DoxyParams}{Parameters}
+{\em temp} & the current node being inserted into the \mbox{\hyperlink{classAVL}{A\+VL}} tree \\
+\hline
+{\em n} & the value of the node \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAVL_a1af0b384159ccf3b414512c8a197bc01}\label{classAVL_a1af0b384159ccf3b414512c8a197bc01}} 
+\index{AVL@{AVL}!leftRotate@{leftRotate}}
+\index{leftRotate@{leftRotate}!AVL@{AVL}}
+\doxysubsubsection{\texorpdfstring{leftRotate()}{leftRotate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classNode}{Node}}$\ast$ A\+V\+L\+::left\+Rotate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classNode}{Node}} $\ast$}]{temp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Performs a left rotation when balance$>$1 and returns the new root of the subtree after the rotation . 
+\begin{DoxyParams}{Parameters}
+{\em temp} & the node whose balance$>$1 and needs to be rotated \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAVL_afeffc2b1135be2afe87d0aeee5c01b0d}\label{classAVL_afeffc2b1135be2afe87d0aeee5c01b0d}} 
+\index{AVL@{AVL}!rightRotate@{rightRotate}}
+\index{rightRotate@{rightRotate}!AVL@{AVL}}
+\doxysubsubsection{\texorpdfstring{rightRotate()}{rightRotate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classNode}{Node}}$\ast$ A\+V\+L\+::right\+Rotate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classNode}{Node}} $\ast$}]{temp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Performs a right rotation when balance$<$1 and returns the new root of the subtree after the rotation . 
+\begin{DoxyParams}{Parameters}
+{\em temp} & the node whose balance$<$1 and needs to be rotated \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/anon/\+Documents/\+L3/\+Q1/\mbox{\hyperlink{q1_8cpp}{q1.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,101 @@
+\hypertarget{classRBT}{}\doxysection{R\+BT Class Reference}
+\label{classRBT}\index{RBT@{RBT}}
+Inheritance diagram for R\+BT\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classRBT}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classRBT_ae7666dcf00e7ed5676cd0fa40922c7fc}{R\+BT}} ()
+\item 
+\mbox{\hyperlink{classNode}{Node}} $\ast$ \mbox{\hyperlink{classRBT_a5f274c193e0d08d7e65fd69495357c6a}{left\+Rotate}} (\mbox{\hyperlink{classNode}{Node}} $\ast$temp)
+\item 
+\mbox{\hyperlink{classNode}{Node}} $\ast$ \mbox{\hyperlink{classRBT_abb66ccff60a782a68a5fc88416f9ca6c}{right\+Rotate}} (\mbox{\hyperlink{classNode}{Node}} $\ast$temp)
+\item 
+void \mbox{\hyperlink{classRBT_a0d021bb1202ee0832bc869d8bea2f7bc}{recolour}} (\mbox{\hyperlink{classNode}{Node}} $\ast$temp)
+\item 
+void \mbox{\hyperlink{classRBT_ac01cf40eb5b94787850b7b8443529d6b}{insert}} (\mbox{\hyperlink{classNode}{Node}} $\ast$temp, int n)
+\item 
+void \mbox{\hyperlink{classRBT_ad9c86f19771dc99e6192c55cf93ebb17}{print}} (\mbox{\hyperlink{classNode}{Node}} $\ast$temp, int level)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Defines a Red Black Tree with proper insertion employing recolouring and rotations too 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classRBT_ae7666dcf00e7ed5676cd0fa40922c7fc}\label{classRBT_ae7666dcf00e7ed5676cd0fa40922c7fc}} 
+\index{RBT@{RBT}!RBT@{RBT}}
+\index{RBT@{RBT}!RBT@{RBT}}
+\doxysubsubsection{\texorpdfstring{RBT()}{RBT()}}
+{\footnotesize\ttfamily R\+B\+T\+::\+R\+BT (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classRBT_ac01cf40eb5b94787850b7b8443529d6b}\label{classRBT_ac01cf40eb5b94787850b7b8443529d6b}} 
+\index{RBT@{RBT}!insert@{insert}}
+\index{insert@{insert}!RBT@{RBT}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily void R\+B\+T\+::insert (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classNode}{Node}} $\ast$}]{temp,  }\item[{int}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Insert a node into a red black tree. 
+\begin{DoxyParams}{Parameters}
+{\em temp} & the current node being inserted @oaram n the value of the node \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRBT_a5f274c193e0d08d7e65fd69495357c6a}\label{classRBT_a5f274c193e0d08d7e65fd69495357c6a}} 
+\index{RBT@{RBT}!leftRotate@{leftRotate}}
+\index{leftRotate@{leftRotate}!RBT@{RBT}}
+\doxysubsubsection{\texorpdfstring{leftRotate()}{leftRotate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classNode}{Node}}$\ast$ R\+B\+T\+::left\+Rotate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classNode}{Node}} $\ast$}]{temp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Performs a left rotation when balance$>$1 and returns the new root of the subtree after the rotation. 
+\begin{DoxyParams}{Parameters}
+{\em temp} & the node whose balance$>$1 and needs to be rotated \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRBT_ad9c86f19771dc99e6192c55cf93ebb17}\label{classRBT_ad9c86f19771dc99e6192c55cf93ebb17}} 
+\index{RBT@{RBT}!print@{print}}
+\index{print@{print}!RBT@{RBT}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void R\+B\+T\+::print (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classNode}{Node}} $\ast$}]{temp,  }\item[{int}]{level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Prints level wise indentation along with colour of tree and balance factor. 
+\begin{DoxyParams}{Parameters}
+{\em temp} & the current node being printed \\
+\hline
+{\em level} & the depth of a node \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRBT_a0d021bb1202ee0832bc869d8bea2f7bc}\label{classRBT_a0d021bb1202ee0832bc869d8bea2f7bc}} 
+\index{RBT@{RBT}!recolour@{recolour}}
+\index{recolour@{recolour}!RBT@{RBT}}
+\doxysubsubsection{\texorpdfstring{recolour()}{recolour()}}
+{\footnotesize\ttfamily void R\+B\+T\+::recolour (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classNode}{Node}} $\ast$}]{temp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+First tries to balance using recolouring and then using rotations. 
+\begin{DoxyParams}{Parameters}
+{\em temp} & the current node who is violating red black tree property \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRBT_abb66ccff60a782a68a5fc88416f9ca6c}\label{classRBT_abb66ccff60a782a68a5fc88416f9ca6c}} 
+\index{RBT@{RBT}!rightRotate@{rightRotate}}
+\index{rightRotate@{rightRotate}!RBT@{RBT}}
+\doxysubsubsection{\texorpdfstring{rightRotate()}{rightRotate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classNode}{Node}}$\ast$ R\+B\+T\+::right\+Rotate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classNode}{Node}} $\ast$}]{temp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Performs a right rotation when balance$<$1 and returns the new root of the subtree after the rotation . 
+\begin{DoxyParams}{Parameters}
+{\em temp} & the node whose balance$<$1 and needs to be rotated \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/anon/\+Documents/\+L3/\+Q1/\mbox{\hyperlink{q1_8cpp}{q1.\+cpp}}\end{DoxyCompactItemize}
